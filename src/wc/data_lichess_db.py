@@ -12,7 +12,7 @@ Filters (counted in the report), same recipe as wc.data_lichess (P2) unless note
   - NEW: at most max_per_user games per target account per band (stops a few prolific accounts dominating)
   - NEW: time controls with base < 60 s (hyperbullet, mostly premoves) are dropped
   - NEW: the low band is sampled to the high band's exact time-control histogram (same size, same TC mix)
-Splits: 70/10/5/15 by whole game, stratified by (band, target colour). No head-to-head set (bands never meet).
+Splits: 70/10/5/15 of games, grouped by target account (no account in two splits). No head-to-head set (bands never meet).
 """
 from __future__ import annotations
 
@@ -134,16 +134,23 @@ def build(raw_dir: Path, months, n_per_band=100_000, clock_min_s=10.0, min_plies
             rep["low_tc_shortfall"] += need - got
     rep["low_kept"] = len(low)
     games = high + low
+    # Splits are grouped by TARGET ACCOUNT: an account's games all land in one split, so test players are never
+    # trained on (the high band has only ~3k accounts; a per-game split put 99% of test games on training accounts).
     for band in ("low", "high"):
-        for c in ("w", "b"):
-            grp = sorted([g for g in games if g.player == band and g.color == c], key=lambda g: g.gid)
-            random.Random(seed).shuffle(grp)
-            n, i = len(grp), 0
-            for k, (name, fr) in enumerate(FRAC):
-                j = n if k == len(FRAC) - 1 else i + round(fr * n)
-                for g in grp[i:j]:
-                    g.split = name
-                i = j
+        by_user = collections.defaultdict(list)
+        for g in games:
+            if g.player == band:
+                by_user[g.meta["target_user"]].append(g)
+        users = sorted(by_user); random.Random(seed).shuffle(users)
+        n = sum(len(v) for v in by_user.values())
+        bounds = [sum(fr for _, fr in FRAC[:k + 1]) * n for k in range(len(FRAC))]
+        done = 0
+        for u in users:
+            k = next(k for k, b in enumerate(bounds) if done < b or k == len(bounds) - 1)
+            for g in by_user[u]:
+                g.split = FRAC[k][0]
+            done += len(by_user[u])
+        rep[f"{band}_accounts"] = len(users)
     if other_from is not None:  # same player-neutral OTB probe pool recipe as P1/P2
         excl = re.compile(other_from["exclude_names"], re.I)
         pool, seen_o = [], set(seen)
