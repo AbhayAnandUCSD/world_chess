@@ -23,8 +23,9 @@ ap.add_argument("--dropout", type=float); ap.add_argument("--schedule_steps", ty
 ap.add_argument("--seed", type=int, help="training seed (batch order, torch)")
 ap.add_argument("--data_seed", type=int, default=0, help="which games fill the matched budget (0 = original)")
 ap.add_argument("--ckpt_every", type=int, help="save a checkpoint every N steps (else ckpt_fracs)")
+ap.add_argument("--batch_games", type=int); ap.add_argument("--wd", type=float); ap.add_argument("--warmup_steps", type=int)
 a = ap.parse_args(); which = a.which
-for k in ("lr", "steps", "dev_every", "dropout", "schedule_steps"):
+for k in ("lr", "steps", "dev_every", "dropout", "schedule_steps", "batch_games", "wd", "warmup_steps"):
     if getattr(a, k) is not None:
         F[k] = getattr(a, k)
 train_seed = a.seed if a.seed is not None else seed
@@ -38,6 +39,8 @@ for p in PL:
     gs = sorted(load_games("policy", p), key=lambda g: g.gid); rng.shuffle(gs)
     nd = len(gs) // 10
     devs[p], pools[p] = gs[:nd], gs[nd:]
+    if F.get("dev_max"):  # large experiments: live dev curves on a fixed subset; the rest of the holdout stays unused
+        devs[p] = devs[p][:F["dev_max"]]
 
 # match target-char budget: subsample larger pool per color to the smaller's chars
 for col in ("w", "b"):

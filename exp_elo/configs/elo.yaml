@@ -1,0 +1,46 @@
+# P3 (Elo bands). Two "players" = rating bands on Lichess, Aug-Oct 2017 dumps (after the base model's pretraining data).
+seed: 0
+players: [low, high]   # low = both players 1500-1999, high = both players >= 2300
+base_ckpt: lichess_8layers_ckpt_no_optimizer.pt
+randinit_ckpt: randominit_8layers_ckpt.pt
+probe:
+  layer_resid: 6
+  train_min_move: 2
+  eval_min_move: 16
+  epochs: 10
+  batch: 1024
+  fit_splits: [probe_fit, probe_fit_other]
+  lr: 1.0e-3
+  wd: 0.01
+preservation:
+  tolerance_pp: 1.0       # LOCKED before results
+  bootstrap: 2000
+policy:
+  min_ply_scored: 31
+finetune:
+  lr: 3.0e-06            # placeholder; re-selected on dev by select_config.py
+  warmup_steps: 100
+  schedule_steps: 6000   # ~1 epoch of ~90k training games at 16 games/step; sweep horizon
+  sweep_lrs: [1.0e-6, 3.0e-6, 1.0e-5, 3.0e-5]
+  sweep_dev_every: 300
+  steps: 6000            # placeholder; LOCKED by select_config.py on dev
+  batch_games: 16
+  wd: 0.1
+  dropout: 0.0
+  grad_clip: 1.0
+  dev_every: 500
+  dev_max: 1000          # live dev curves on 1,000 games per band (the full 10% holdout stays out of training)
+  ckpt_fracs: [0.0, 0.25, 0.5, 1.0]
+  dose_ckpt_every: 100   # dose-run checkpoints (P1/P2 used 20; 6,000 steps would mean 300 checkpoints)
+  traj_steps: [100, 200, 400, 800, 1600, 3200]
+sensitivity:
+  swap_fracs: [0.0, 0.05, 0.10, 0.25]
+lichess_db:
+  months: ["2017-08", "2017-09", "2017-10"]
+  high_min: 2300
+  low_band: [1500, 2000]
+  n_per_band: 100000
+  min_base_s: 60          # drop hyperbullet (15+0, 30+0)
+  clock_min_s: 10
+  max_per_user: 1000      # cap per target account per band (1% of the band)
+  exclude_from_probe_pool: "carlsen|tang,\\s*a|karpov|kasparov"
