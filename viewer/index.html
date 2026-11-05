@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board Probe Viewer</title>
+<style>
+:root {
+  --bg: #f7f6f3; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e2e0da;
+  --light: #ece4d4; --dark: #b9a68a; --bad: #c8372d; --good: #2f7d4f;
+  --s1: #2d6cdf; --s2: #c8372d; --s3: #7a7a7a;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #161615; --panel: #1f1f1d; --ink: #ecebe7; --muted: #9b9a95; --line: #33322f;
+    --light: #8d8576; --dark: #5b5246; --bad: #ff6b5f; --good: #5fc48a; --s1: #6f9bff; --s2: #ff6b5f; --s3: #aaa; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, sans-serif; }
+header { padding: 16px 20px 8px; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.sub { color: var(--muted); }
+main { padding: 8px 20px 40px; display: grid; gap: 16px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+select, button, input { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+button { cursor: pointer; }
+.prefix { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); word-break: break-all; margin-top: 8px; }
+.boards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.bcard h3 { font-size: 13px; margin: 0 0 6px; display: flex; justify-content: space-between; }
+.board { display: grid; grid-template-columns: repeat(8, 1fr); aspect-ratio: 1; width: 100%; max-width: 300px; border: 1px solid var(--line); }
+.sq { display: flex; align-items: center; justify-content: center; font-size: clamp(16px, 3.2vw, 26px); position: relative; color: #111; }
+.sq.l { background: var(--light); } .sq.d { background: var(--dark); }
+.sq.wrong { box-shadow: inset 0 0 0 3px var(--bad); }
+.top { font-family: ui-monospace, Menlo, monospace; font-size: 12px; margin-top: 6px; }
+.top .hit { color: var(--good); font-weight: 600; }
+.err { color: var(--bad); }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+svg text { fill: var(--muted); font-size: 10px; }
+.legend span { margin-right: 12px; font-size: 12px; }
+.legend i { display: inline-block; width: 10px; height: 3px; margin-right: 4px; vertical-align: middle; }
+table { border-collapse: collapse; font-size: 13px; }
+td, th { padding: 4px 10px; border-bottom: 1px solid var(--line); text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Board Probe Viewer</h1>
+  <div class="sub">True board vs frozen base probe (resid after block 5) on each model, plus each model's top legal moves. Red outline = probe wrong.</div>
+</header>
+<main>
+  <section class="panel">
+    <div class="controls">
+      <label>Split <select id="split"><option>test</option><option>probe_dev</option><option>h2h</option></select></label>
+      <label>Player <select id="player"><option value="">all</option><option>karpov</option><option>kasparov</option></select></label>
+      <select id="game" style="max-width:420px"></select>
+      <button id="prev">◀</button>
+      <label>Move <input id="move" type="number" min="2" value="16" style="width:64px"></label>
+      <button id="next">▶</button>
+      <span id="status" class="sub"></span>
+    </div>
+    <div class="prefix" id="prefix"></div>
+  </section>
+  <section class="panel"><div class="boards" id="boards"></div></section>
+  <section class="panel">
+    <h3 style="margin:0 0 8px;font-size:14px">Fine-tuning (live, refreshes every 10 s)</h3>
+    <div class="legend" id="legend"></div>
+    <div class="charts" id="charts"></div>
+  </section>
+  <section class="panel"><h3 style="margin:0 0 8px;font-size:14px">Results</h3><div id="results" class="sub">none yet</div></section>
+</main>
+<script>
+const GLYPH = {k:'♚',q:'♛',r:'♜',b:'♝',n:'♞',p:'♟',K:'♔',Q:'♕',R:'♖',B:'♗',N:'♘',P:'♙','.':''};
+const NAMES = ['k','q','r','b','n','p','.','P','N','B','R','Q','K'];
+const $ = id => document.getElementById(id);
+let games = [];
+
+async function loadGames() {
+  const r = await fetch(`/api/games?split=${$('split').value}&player=${$('player').value}`);
+  games = await r.json();
+  $('game').innerHTML = games.map(g => `<option value="${g.gid}">${g.white} – ${g.black} (${g.date}, ${g.eco}, ${g.n} ply)</option>`).join('');
+  loadPos();
+}
+
+function boardHTML(labels, truth, conf) {
+  let h = '';
+  for (let r = 7; r >= 0; r--) for (let f = 0; f < 8; f++) {
+    const i = r * 8 + f, c = NAMES[labels[i]];
+    const wrong = truth && labels[i] !== truth[i];
+    const op = conf ? (0.35 + 0.65 * conf[i]).toFixed(2) : 1;
+    h += `<div class="sq ${(r + f) % 2 ? 'l' : 'd'} ${wrong ? 'wrong' : ''}" style="opacity:1"><span style="opacity:${op}">${GLYPH[c]}</span></div>`;
+  }
+  return `<div class="board">${h}</div>`;
+}
+
+async function loadPos() {
+  const gid = $('game').value; if (!gid) return;
+  $('status').textContent = 'loading…';
+  const r = await fetch(`/api/position?gid=${gid}&move=${$('move').value}&split=${$('split').value}`);
+  const d = await r.json();
+  $('move').value = d.move; $('move').max = d.max_move;
+  $('prefix').textContent = '…' + d.prefix + '   → played: ' + d.played;
+  let html = `<div class="bcard"><h3><span>True board</span><span class="sub">move ${d.move}</span></h3>${boardHTML(d.true)}</div>`;
+  for (const [name, m] of Object.entries(d.models)) {
+    const occ = d.true.filter(x => x !== 6).length;
+    const wrong = m.probe_pred ? d.true.reduce((a, t, i) => a + (t !== 6 && m.probe_pred[i] !== t ? 1 : 0), 0) : null;
+    const top = m.top.map(([s, lp]) => `<span class="${s === d.played ? 'hit' : ''}">${s} ${(Math.exp(lp) * 100).toFixed(1)}%</span>`).join(' · ');
+    html += `<div class="bcard"><h3><span>${name}</span><span class="${wrong ? 'err' : 'sub'}">${wrong === null ? 'no probe' : wrong + '/' + occ + ' occ wrong'}</span></h3>
+      ${m.probe_pred ? boardHTML(m.probe_pred, d.true, m.probe_conf) : ''}<div class="top">${top}</div></div>`;
+  }
+  $('boards').innerHTML = html;
+  $('status').textContent = '';
+}
+
+function lineChart(title, series, key) {
+  const W = 360, H = 180, P = 32;
+  const pts = series.flatMap(s => s.data.filter(r => r[key] !== undefined).map(r => [r.step, r[key]]));
+  if (!pts.length) return '';
+  const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs) || 1, y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const sx = x => P + (x - x0) / ((x1 - x0) || 1) * (W - P - 8), sy = y => H - P + 8 - (y - y0) / ((y1 - y0) || 1) * (H - P - 8);
+  const paths = series.map(s => {
+    const d = s.data.filter(r => r[key] !== undefined).map((r, i) => `${i ? 'L' : 'M'}${sx(r.step).toFixed(1)},${sy(r[key]).toFixed(1)}`).join('');
+    return `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="1.6" stroke-dasharray="${s.dash || ''}"/>`;
+  }).join('');
+  return `<div><div style="font-size:12px;margin-bottom:2px">${title}</div><svg viewBox="0 0 ${W} ${H}" width="100%">
+    <line x1="${P}" y1="${H - P + 8}" x2="${W - 8}" y2="${H - P + 8}" stroke="var(--line)"/>
+    <text x="${P}" y="${H - 6}">${x0}</text><text x="${W - 40}" y="${H - 6}">step ${x1}</text>
+    <text x="0" y="14">${y1.toFixed(3)}</text><text x="0" y="${H - P + 6}">${y0.toFixed(3)}</text>${paths}</svg></div>`;
+}
+
+async function loadRuns() {
+  const runs = await (await fetch('/api/runs')).json();
+  const kp = runs.finetune_karpov || [], ks = runs.finetune_kasparov || [];
+  $('legend').innerHTML = `<span><i style="background:var(--s1)"></i>Karpov FT</span><span><i style="background:var(--s2)"></i>Kasparov FT</span><span class="sub">solid = own player, dashed = other player</span>`;
+  $('charts').innerHTML =
+    lineChart('Train loss (masked)', [{data: kp.filter((_, i) => i % 5 === 0), color: 'var(--s1)'}, {data: ks.filter((_, i) => i % 5 === 0), color: 'var(--s2)'}], 'train/loss') +
+    lineChart('Dev: mean log P(Karpov move), ply ≥ 31', [{data: kp, color: 'var(--s1)'}, {data: ks, color: 'var(--s2)', dash: '4 3'}], 'dev/karpov_logp') +
+    lineChart('Dev: mean log P(Kasparov move), ply ≥ 31', [{data: kp, color: 'var(--s1)', dash: '4 3'}, {data: ks, color: 'var(--s2)'}], 'dev/kasparov_logp');
+}
+
+async function loadResults() {
+  const r = await (await fetch('/api/results')).json();
+  const keys = Object.keys(r).sort();
+  if (!keys.length) return;
+  $('results').innerHTML = keys.map(k => `<details><summary>${k}</summary><pre style="font-size:11px;overflow:auto">${JSON.stringify(r[k], null, 1).slice(0, 6000)}</pre></details>`).join('');
+}
+
+$('split').onchange = loadGames; $('player').onchange = loadGames; $('game').onchange = loadPos; $('move').onchange = loadPos;
+$('prev').onclick = () => { $('move').value = +$('move').value - 1; loadPos(); };
+$('next').onclick = () => { $('move').value = +$('move').value + 1; loadPos(); };
+loadGames(); loadRuns(); loadResults(); setInterval(loadRuns, 10000);
+</script>
+</body>
+</html>

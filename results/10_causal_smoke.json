@@ -1,0 +1,14 @@
+[
+ {
+  "ckpt": "lichess_8layers_ckpt_no_optimizer.pt",
+  "n": 20,
+  "mass0": 0.3435905027668923,
+  "mass_edit": 0.31931822502519935,
+  "mass_rand": 0.3473531130235642,
+  "frac_drop_edit": 0.07064304032338287,
+  "frac_drop_rand": -0.01095085640136162,
+  "top1_piece_before": 0.4,
+  "top1_piece_after_edit": 0.35,
+  "edit_norm_over_resid": 0.08813883995173535
+ }
+]

@@ -1,0 +1,39 @@
+# P1 locked settings. Edit ONLY before looking at test results.
+seed: 0
+players: [carlsen, tang]   # Lichess DrNykterstein (GM Magnus Carlsen), penguingim1 (GM Andrew Tang); rated bullet 1+0
+base_ckpt: lichess_8layers_ckpt_no_optimizer.pt
+randinit_ckpt: randominit_8layers_ckpt.pt   # Karvonen's untrained baseline (HF)
+probe:
+  layer_resid: 6          # resid index: 0=embed, k=output of block k-1 -> 6 = output of block 5 (6th block)
+  train_min_move: 2       # probe fit on all White-to-move dots
+  eval_min_move: 16       # evaluation from "16." onward
+  epochs: 10
+  batch: 1024
+  fit_splits: [probe_fit, probe_fit_other]   # other = 3000 games of 8 other champions, no Karpov/Kasparov
+  lr: 1.0e-3
+  wd: 0.01
+preservation:
+  tolerance_pp: 1.0       # LOCKED before results: max acceptable occupied-square error increase
+  bootstrap: 2000
+policy:
+  min_ply_scored: 31      # score moves from ply 31 (after 15 moves each)
+finetune:
+  lr: 3.0e-06            # re-selected on P2 dev by select_config.py
+  warmup_steps: 50
+  schedule_steps: 1200  # sweep length + LR cosine horizon for P2 (~5.4k games/copy, 340 steps/epoch -> ~3.5 epochs)
+  sweep_lrs: [3.0e-6, 5.0e-6, 1.0e-5, 2.0e-5]
+  sweep_dev_every: 40
+  steps: 720           # LOCKED by select_config.py (s3_lr3e-06_dp0.0) on dev
+  batch_games: 16
+  wd: 0.1
+  dropout: 0.0
+  grad_clip: 1.0
+  dev_every: 100
+  ckpt_fracs: [0.0, 0.25, 0.5, 1.0]
+sensitivity:
+  swap_fracs: [0.0, 0.05, 0.10, 0.25]
+lichess:
+  usernames: {carlsen: DrNykterstein, tang: penguingim1}
+  time_controls: ["60+0"]   # dominant bullet TC for both; fixed before looking at model results
+  clock_min_s: 10           # moves made with <10 s on the mover's clock are excluded from targets and scoring
+  exclude_from_probe_pool: "carlsen|tang,\\s*a|karpov|kasparov"   # probe-fit pool must not contain target players

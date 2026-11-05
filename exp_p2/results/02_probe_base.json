@@ -1,0 +1,650 @@
+[
+ {
+  "model": "base",
+  "layer": 0,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8415268865664524,
+  "all_acc": 0.7362343220504031,
+  "train_all_acc": 0.7353553902607584
+ },
+ {
+  "model": "base",
+  "layer": 0,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7983144942198758,
+  "all_acc": 0.666796099014529,
+  "train_all_acc": 0.6682686046901432
+ },
+ {
+  "model": "base",
+  "layer": 0,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8551566769564656,
+  "all_acc": 0.7366116640049858,
+  "train_all_acc": 0.7390962809959978
+ },
+ {
+  "model": "base",
+  "layer": 0,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7971384405219829,
+  "all_acc": 0.6667912300860827,
+  "train_all_acc": 0.6684791718240706
+ },
+ {
+  "model": "base",
+  "layer": 1,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8284681034463899,
+  "all_acc": 0.74535199918202,
+  "train_all_acc": 0.7530370662623262
+ },
+ {
+  "model": "base",
+  "layer": 1,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.796008607275099,
+  "all_acc": 0.6668222695049273,
+  "train_all_acc": 0.668657827520939
+ },
+ {
+  "model": "base",
+  "layer": 1,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8008803575686905,
+  "all_acc": 0.7517053421882912,
+  "train_all_acc": 0.7654128211773321
+ },
+ {
+  "model": "base",
+  "layer": 1,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7952399782935067,
+  "all_acc": 0.6667382804892299,
+  "train_all_acc": 0.6701245448590998
+ },
+ {
+  "model": "base",
+  "layer": 2,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.824040062395124,
+  "all_acc": 0.7465430608031784,
+  "train_all_acc": 0.7552169558680942
+ },
+ {
+  "model": "base",
+  "layer": 2,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7907274927801944,
+  "all_acc": 0.6668107057998676,
+  "train_all_acc": 0.6692457715734208
+ },
+ {
+  "model": "base",
+  "layer": 2,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.7941639119029856,
+  "all_acc": 0.7529590912631948,
+  "train_all_acc": 0.7691566935367413
+ },
+ {
+  "model": "base",
+  "layer": 2,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7910527478058125,
+  "all_acc": 0.6668100971838118,
+  "train_all_acc": 0.6739749498442464
+ },
+ {
+  "model": "base",
+  "layer": 3,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.7926434136171013,
+  "all_acc": 0.7551281988859891,
+  "train_all_acc": 0.7708920793879193
+ },
+ {
+  "model": "base",
+  "layer": 3,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7864426857848147,
+  "all_acc": 0.6668228781209831,
+  "train_all_acc": 0.6774608714207617
+ },
+ {
+  "model": "base",
+  "layer": 3,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.7431911211651173,
+  "all_acc": 0.7664539350679702,
+  "train_all_acc": 0.7907956294869415
+ },
+ {
+  "model": "base",
+  "layer": 3,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7855884633754282,
+  "all_acc": 0.6675331330580766,
+  "train_all_acc": 0.6869304291991583
+ },
+ {
+  "model": "base",
+  "layer": 4,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.7502269808592238,
+  "all_acc": 0.768193359755385,
+  "train_all_acc": 0.8004726921906589
+ },
+ {
+  "model": "base",
+  "layer": 4,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7860061593030641,
+  "all_acc": 0.6665331768784326,
+  "train_all_acc": 0.6836546718343854
+ },
+ {
+  "model": "base",
+  "layer": 4,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.6643921179119073,
+  "all_acc": 0.7831513165582519,
+  "train_all_acc": 0.8225467035163181
+ },
+ {
+  "model": "base",
+  "layer": 4,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7833904241496721,
+  "all_acc": 0.6686109920928602,
+  "train_all_acc": 0.6955277410312746
+ },
+ {
+  "model": "base",
+  "layer": 5,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.5057724240680658,
+  "all_acc": 0.831800432360846,
+  "train_all_acc": 0.8649705415532037
+ },
+ {
+  "model": "base",
+  "layer": 5,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7864067365451411,
+  "all_acc": 0.666015853231021,
+  "train_all_acc": 0.6846305493666708
+ },
+ {
+  "model": "base",
+  "layer": 5,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.435221303603034,
+  "all_acc": 0.8451802477310794,
+  "train_all_acc": 0.8817694150472418
+ },
+ {
+  "model": "base",
+  "layer": 5,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7835890009021548,
+  "all_acc": 0.6680772358119424,
+  "train_all_acc": 0.6966423849641045
+ },
+ {
+  "model": "base",
+  "layer": 6,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.09911242279916077,
+  "all_acc": 0.9687980806684064,
+  "train_all_acc": 0.9817460133267318
+ },
+ {
+  "model": "base",
+  "layer": 6,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7883634023045174,
+  "all_acc": 0.665051196782612,
+  "train_all_acc": 0.6827767849775137
+ },
+ {
+  "model": "base",
+  "layer": 6,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.06939379155390549,
+  "all_acc": 0.9757557794180657,
+  "train_all_acc": 0.9885475009799067
+ },
+ {
+  "model": "base",
+  "layer": 6,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7851279707338952,
+  "all_acc": 0.6666597690180345,
+  "train_all_acc": 0.6956633646387754
+ },
+ {
+  "model": "base",
+  "layer": 7,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.11118671062620464,
+  "all_acc": 0.9646454933198302,
+  "train_all_acc": 0.9796280125685934
+ },
+ {
+  "model": "base",
+  "layer": 7,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7896216256930928,
+  "all_acc": 0.6645131801893039,
+  "train_all_acc": 0.6818588476554441
+ },
+ {
+  "model": "base",
+  "layer": 7,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.08802481803245334,
+  "all_acc": 0.9690920422233474,
+  "train_all_acc": 0.9845798456388992
+ },
+ {
+  "model": "base",
+  "layer": 7,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7859188540067139,
+  "all_acc": 0.6662945993845675,
+  "train_all_acc": 0.6969249945847258
+ },
+ {
+  "model": "base",
+  "layer": 8,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.16247235209052105,
+  "all_acc": 0.9479505462937716,
+  "train_all_acc": 0.9678161069594009
+ },
+ {
+  "model": "base",
+  "layer": 8,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7898150668399078,
+  "all_acc": 0.6645594350095432,
+  "train_all_acc": 0.681001590414449
+ },
+ {
+  "model": "base",
+  "layer": 8,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.13389354761784955,
+  "all_acc": 0.9537092714135473,
+  "train_all_acc": 0.9730694064085902
+ },
+ {
+  "model": "base",
+  "layer": 8,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7868415511583359,
+  "all_acc": 0.6664619687999065,
+  "train_all_acc": 0.6943897276117094
+ },
+ {
+  "model": "randinit",
+  "layer": 0,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8493897223066943,
+  "all_acc": 0.7043245822459393,
+  "train_all_acc": 0.6989095475151628
+ },
+ {
+  "model": "randinit",
+  "layer": 0,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.793675330433428,
+  "all_acc": 0.6666043849569587,
+  "train_all_acc": 0.6682604656620044
+ },
+ {
+  "model": "randinit",
+  "layer": 0,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8637305370749988,
+  "all_acc": 0.7239658395980213,
+  "train_all_acc": 0.7300692929457029
+ },
+ {
+  "model": "randinit",
+  "layer": 0,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7920832926764552,
+  "all_acc": 0.6664765755852452,
+  "train_all_acc": 0.6684914206584973
+ },
+ {
+  "model": "randinit",
+  "layer": 1,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8689527376626331,
+  "all_acc": 0.7264009124371908,
+  "train_all_acc": 0.7328174640013203
+ },
+ {
+  "model": "randinit",
+  "layer": 1,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7903577291721232,
+  "all_acc": 0.6664345810773965,
+  "train_all_acc": 0.6687378478668977
+ },
+ {
+  "model": "randinit",
+  "layer": 1,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8495494293208952,
+  "all_acc": 0.7367930315896077,
+  "train_all_acc": 0.7490793228070718
+ },
+ {
+  "model": "randinit",
+  "layer": 1,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.792309259325832,
+  "all_acc": 0.6666561173216998,
+  "train_all_acc": 0.6713365347918472
+ },
+ {
+  "model": "randinit",
+  "layer": 2,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8662902248368473,
+  "all_acc": 0.7340396525532661,
+  "train_all_acc": 0.7431417003187275
+ },
+ {
+  "model": "randinit",
+  "layer": 2,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7908113743394327,
+  "all_acc": 0.6664431017021775,
+  "train_all_acc": 0.6691612384989891
+ },
+ {
+  "model": "randinit",
+  "layer": 2,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8366350388438087,
+  "all_acc": 0.7420319985977486,
+  "train_all_acc": 0.7581644928208937
+ },
+ {
+  "model": "randinit",
+  "layer": 2,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7935537877659602,
+  "all_acc": 0.6666469880808632,
+  "train_all_acc": 0.6723039509582456
+ },
+ {
+  "model": "randinit",
+  "layer": 3,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8589546410201997,
+  "all_acc": 0.7365161112842286,
+  "train_all_acc": 0.7473419223449684
+ },
+ {
+  "model": "randinit",
+  "layer": 3,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7906949672776326,
+  "all_acc": 0.6664315379971175,
+  "train_all_acc": 0.6693472273796262
+ },
+ {
+  "model": "randinit",
+  "layer": 3,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8281552527199417,
+  "all_acc": 0.7440501694387099,
+  "train_all_acc": 0.7614371073926228
+ },
+ {
+  "model": "randinit",
+  "layer": 3,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7938721953173548,
+  "all_acc": 0.6667455838818992,
+  "train_all_acc": 0.6733591235765566
+ },
+ {
+  "model": "randinit",
+  "layer": 4,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8554914053560919,
+  "all_acc": 0.7383851711915241,
+  "train_all_acc": 0.7504411997926723
+ },
+ {
+  "model": "randinit",
+  "layer": 4,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7906076619812824,
+  "all_acc": 0.6663432886690297,
+  "train_all_acc": 0.669477451829847
+ },
+ {
+  "model": "randinit",
+  "layer": 4,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.823409985407592,
+  "all_acc": 0.7448310238382736,
+  "train_all_acc": 0.7631127801759706
+ },
+ {
+  "model": "randinit",
+  "layer": 4,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7940057210647138,
+  "all_acc": 0.6667595820511822,
+  "train_all_acc": 0.6735865328578207
+ },
+ {
+  "model": "randinit",
+  "layer": 5,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8516628125499084,
+  "all_acc": 0.7392737506329607,
+  "train_all_acc": 0.7521603075875727
+ },
+ {
+  "model": "randinit",
+  "layer": 5,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7904296276514704,
+  "all_acc": 0.6663925865695477,
+  "train_all_acc": 0.669513795410942
+ },
+ {
+  "model": "randinit",
+  "layer": 5,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8202924169796997,
+  "all_acc": 0.7455777957387137,
+  "train_all_acc": 0.7643920581136279
+ },
+ {
+  "model": "randinit",
+  "layer": 5,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7940998738352875,
+  "all_acc": 0.6667571475869591,
+  "train_all_acc": 0.6743736010541734
+ },
+ {
+  "model": "randinit",
+  "layer": 6,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.848801212898201,
+  "all_acc": 0.7401951953414092,
+  "train_all_acc": 0.7535582058165202
+ },
+ {
+  "model": "randinit",
+  "layer": 6,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7903200680638938,
+  "all_acc": 0.6664181484438905,
+  "train_all_acc": 0.6693813951809218
+ },
+ {
+  "model": "randinit",
+  "layer": 6,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8179143139052303,
+  "all_acc": 0.7462539681766837,
+  "train_all_acc": 0.7656063044106118
+ },
+ {
+  "model": "randinit",
+  "layer": 6,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7937044321988781,
+  "all_acc": 0.6668003593269194,
+  "train_all_acc": 0.6746332441102447
+ },
+ {
+  "model": "randinit",
+  "layer": 7,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8443578574757103,
+  "all_acc": 0.741063690453005,
+  "train_all_acc": 0.7544727585922351
+ },
+ {
+  "model": "randinit",
+  "layer": 7,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7900307622779492,
+  "all_acc": 0.6663785884002649,
+  "train_all_acc": 0.669473100270248
+ },
+ {
+  "model": "randinit",
+  "layer": 7,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8156893545430082,
+  "all_acc": 0.7466392221399915,
+  "train_all_acc": 0.7660944043456286
+ },
+ {
+  "model": "randinit",
+  "layer": 7,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7935349572118454,
+  "all_acc": 0.6667918387021384,
+  "train_all_acc": 0.6746770820439824
+ },
+ {
+  "model": "randinit",
+  "layer": 8,
+  "kind": "linear",
+  "task": "real",
+  "occ_err": 0.8433339823709709,
+  "all_acc": 0.7416041415105363,
+  "train_all_acc": 0.7551417705883566
+ },
+ {
+  "model": "randinit",
+  "layer": 8,
+  "kind": "linear",
+  "task": "control",
+  "occ_err": 0.7901625761567523,
+  "all_acc": 0.6664351896934523,
+  "train_all_acc": 0.669523062621199
+ },
+ {
+  "model": "randinit",
+  "layer": 8,
+  "kind": "mlp",
+  "task": "real",
+  "occ_err": 0.8141754195590774,
+  "all_acc": 0.7468924064191953,
+  "train_all_acc": 0.7666834765802286
+ },
+ {
+  "model": "randinit",
+  "layer": 8,
+  "kind": "mlp",
+  "task": "control",
+  "occ_err": 0.7936616354849809,
+  "all_acc": 0.6667784491489113,
+  "train_all_acc": 0.6752485062868754
+ }
+]

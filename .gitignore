@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+ckpts/
+runs/*.jsonl
+*.pt
+*.npz
+.DS_Store
+wandb/
+colab/*.zip
+# experiment roots: data/checkpoints/logs stay out of git
+exp_*/data/
+exp_*/ckpts/
+exp_*/runs/
+runs/*.log
+results/18/*.npy
+results/18/engine_*.jsonl
+results/19/rollout_*.jsonl
+*.csv
+colab/
+.claude/worktrees/

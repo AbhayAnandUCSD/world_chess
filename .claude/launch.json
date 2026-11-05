@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {"name": "viewer", "runtimeExecutable": "uv", "runtimeArgs": ["run", "python", "-m", "viewer"], "port": 8765}
+  ]
+}

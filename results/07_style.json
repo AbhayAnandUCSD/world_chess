@@ -1,0 +1,338 @@
+{
+ "karpov": {
+  "games": 3004,
+  "white_share": 0.5069906790945407,
+  "median_plies": 82.0,
+  "eco_family": {
+   "A": 0.15878828229027964,
+   "B": 0.19340878828229027,
+   "C": 0.14280958721704395,
+   "D": 0.21304926764314247,
+   "E": 0.2919440745672437
+  },
+  "top_eco_white": [
+   [
+    "E15",
+    83
+   ],
+   [
+    "E32",
+    43
+   ],
+   [
+    "D11",
+    33
+   ],
+   [
+    "D46",
+    32
+   ],
+   [
+    "D20",
+    30
+   ],
+   [
+    "E11",
+    28
+   ]
+  ],
+  "top_eco_black": [
+   [
+    "B17",
+    96
+   ],
+   [
+    "E15",
+    72
+   ],
+   [
+    "B12",
+    72
+   ],
+   [
+    "C42",
+    58
+   ],
+   [
+    "C92",
+    56
+   ],
+   [
+    "E12",
+    54
+   ]
+  ],
+  "first_move_white": {
+   "d4": 893,
+   "e4": 379,
+   "c4": 129,
+   "Nf3": 122
+  },
+  "capture_rate": 0.19837538751324413,
+  "check_rate": 0.04257740454420594,
+  "late_capture_rate": 0.2177001645851486,
+  "late_check_rate": 0.05929906089650499,
+  "late_piece_mix": {
+   "B": 0.1399094781682641,
+   "K": 0.13629102526866105,
+   "N": 0.1383483396262949,
+   "O": 0.00255349017329848,
+   "P": 0.19934165940555718,
+   "Q": 0.14036934843644108,
+   "R": 0.2431866589214832
+  }
+ },
+ "kasparov": {
+  "games": 1462,
+  "white_share": 0.5020519835841313,
+  "median_plies": 75.0,
+  "eco_family": {
+   "A": 0.14158686730506156,
+   "B": 0.28454172366621067,
+   "C": 0.11969904240766074,
+   "D": 0.23803009575923392,
+   "E": 0.2161422708618331
+  },
+  "top_eco_white": [
+   [
+    "E12",
+    31
+   ],
+   [
+    "C45",
+    25
+   ],
+   [
+    "E32",
+    18
+   ],
+   [
+    "C42",
+    16
+   ],
+   [
+    "C11",
+    15
+   ],
+   [
+    "C88",
+    14
+   ]
+  ],
+  "top_eco_black": [
+   [
+    "B90",
+    37
+   ],
+   [
+    "B85",
+    28
+   ],
+   [
+    "B80",
+    19
+   ],
+   [
+    "D85",
+    19
+   ],
+   [
+    "A30",
+    15
+   ],
+   [
+    "E92",
+    15
+   ]
+  ],
+  "first_move_white": {
+   "d4": 319,
+   "e4": 293,
+   "c4": 75,
+   "Nf3": 43
+  },
+  "capture_rate": 0.2130626995544016,
+  "check_rate": 0.053559524227220094,
+  "late_capture_rate": 0.24301779359430606,
+  "late_check_rate": 0.08074021352313167,
+  "late_piece_mix": {
+   "B": 0.154932384341637,
+   "K": 0.11296797153024911,
+   "N": 0.13691103202846974,
+   "O": 0.0036725978647686834,
+   "P": 0.2089679715302491,
+   "Q": 0.14548042704626335,
+   "R": 0.23706761565836298
+  }
+ },
+ "disagree_top_karpovish": [
+  {
+   "player": "karpov",
+   "gid": "1ba89f512da7",
+   "ply": 47,
+   "move": "Nc2",
+   "context": "5 19.Qb1 b4 20.Nf1 Qb6 21.f3 Bf6 22.Ne3 Rc3 23.Bxc3 bxc3 24.",
+   "kp_minus_ks": 1.6318827612556106
+  },
+  {
+   "player": "karpov",
+   "gid": "16754159e96f",
+   "ply": 119,
+   "move": "Ba2",
+   "context": "55.Rg8+ Be8 56.Nc2 Rxb3 57.Ke4 Ke7 58.Ne1 Kd6 59.Bc4 Rb4 60.",
+   "kp_minus_ks": 1.5933360420167446
+  },
+  {
+   "player": "karpov",
+   "gid": "8af9f7581c6c",
+   "ply": 40,
+   "move": "Nxe5",
+   "context": "h2 Bf5 16.Bxf5 Qxf5 17.Re1 Re8 18.g4 Qd3 19.Qg2 Bg7 20.bxc5 ",
+   "kp_minus_ks": 1.4428230300524092
+  },
+  {
+   "player": "karpov",
+   "gid": "72b5d0af1c66",
+   "ply": 132,
+   "move": "Bd4",
+   "context": "a2 Qf2 62.Qb1 g3 63.Bh3 Kh4 64.Bg2 Qg1 65.Qxg1 Bxg1 66.Kxd6 ",
+   "kp_minus_ks": 1.4246203061120468
+  },
+  {
+   "player": "karpov",
+   "gid": "8e2f86690c31",
+   "ply": 36,
+   "move": "Nb7",
+   "context": "bxc4 Rhg8 14.Rfb1 a5 15.Nd2 Qe6 16.Nf1 Nc5 17.Bc3 b6 18.Ne3 ",
+   "kp_minus_ks": 1.371520770130246
+  },
+  {
+   "player": "karpov",
+   "gid": "74e0ab1ad283",
+   "ply": 32,
+   "move": "Nc4",
+   "context": "11.a4 h6 12.d5 Na5 13.Ba2 c6 14.Na3 Qc7 15.Nh4 cxd5 16.exd5 ",
+   "kp_minus_ks": 1.3188272225669948
+  },
+  {
+   "player": "karpov",
+   "gid": "a80a5b88c4a6",
+   "ply": 31,
+   "move": "Qc3",
+   "context": " 11.f4 Bd7 12.Qd3 dxc3 13.Nxc3 a6 14.Ne2 Nf5 15.Rb1 Nce7 16.",
+   "kp_minus_ks": 1.3140252693119692
+  },
+  {
+   "player": "karpov",
+   "gid": "3e6a0f69f694",
+   "ply": 151,
+   "move": "Nc5",
+   "context": "4 71.Kf5 Ne3+ 72.Kf4 Nc4 73.a4 Kc8 74.Kf5 Kb8 75.Ra6 Nb2 76.",
+   "kp_minus_ks": 1.2909509134478867
+  },
+  {
+   "player": "karpov",
+   "gid": "c19380decac3",
+   "ply": 175,
+   "move": "Ra3",
+   "context": "f5 83.a5 Ne7 84.Qc4 g5 85.Rb3 Kh6 86.Rh3+ Kg7 87.Qe4 Ng6 88.",
+   "kp_minus_ks": 1.280906628305729
+  },
+  {
+   "player": "karpov",
+   "gid": "ec1e108b4901",
+   "ply": 58,
+   "move": "Ra7",
+   "context": "Rc2 a5 25.Rec1 Rb7 26.Bc4 Nd5 27.Qe1 Rd8 28.Nd2 N5f6 29.Bf1 ",
+   "kp_minus_ks": 1.2743633985519978
+  }
+ ],
+ "disagree_top_kasparovish": [
+  {
+   "player": "karpov",
+   "gid": "2a4e7ffe21ac",
+   "ply": 68,
+   "move": "bxa5",
+   "context": " Rde8 30.Nc3 Kh8 31.b5 axb5 32.Nxb5 Qh6 33.Nc3 Nxc3 34.Qxc3 ",
+   "kp_minus_ks": -2.054964661561712
+  },
+  {
+   "player": "karpov",
+   "gid": "29d6dd721767",
+   "ply": 35,
+   "move": "Nd5",
+   "context": ".f4 cxb4 14.axb4 Qc7 15.Rf2 a5 16.Nxd4 Nxd4 17.bxa5 Qxa5 18.",
+   "kp_minus_ks": -1.9709981978080577
+  },
+  {
+   "player": "karpov",
+   "gid": "fa9a6ee652de",
+   "ply": 55,
+   "move": "Qxd7",
+   "context": "23.Ng4 b5 24.Nxe5 dxe5 25.b4 Na4 26.Nxa4 bxa4 27.b5 Bxb5 28.",
+   "kp_minus_ks": -1.8639475078889802
+  },
+  {
+   "player": "karpov",
+   "gid": "58d174289fcb",
+   "ply": 52,
+   "move": "Nxe4",
+   "context": "Rxc8 Rxc8 22.Rd2 Nd7 23.a4 Bc6 24.Ba3 Qc7 25.Nb2 Nf6 26.Nc4 ",
+   "kp_minus_ks": -1.8534413371088192
+  },
+  {
+   "player": "karpov",
+   "gid": "1f8af4cad237",
+   "ply": 44,
+   "move": "Qh5",
+   "context": "2 Qd8 18.Bxe6 fxe6 19.Rab1 Bc6 20.Qe2 Qe7 21.Ng2 Qf7 22.Bc3 ",
+   "kp_minus_ks": -1.852011560748963
+  },
+  {
+   "player": "kasparov",
+   "gid": "dfaccaa81e63",
+   "ply": 64,
+   "move": "Rg7",
+   "context": "Qe4 Kg7 28.Rfd1 Bxd1 29.Rxd1 Re6 30.Qf5 Kf7 31.Re1 b6 32.h4 ",
+   "kp_minus_ks": -1.7792536616348116
+  },
+  {
+   "player": "karpov",
+   "gid": "dcdd8815a5fa",
+   "ply": 70,
+   "move": "Rd4",
+   "context": "e1 Bh6 31.Rcd1 Qd6 32.Nb3 Bg7 33.Re3 Red7 34.Rf3 Qe7 35.Re3 ",
+   "kp_minus_ks": -1.7515563766937703
+  },
+  {
+   "player": "karpov",
+   "gid": "391a6b3f4756",
+   "ply": 38,
+   "move": "Qxc3",
+   "context": "6 Bxf6 15.Bd5 Rb8 16.Rb1 Qc7 17.b4 cxb4 18.axb4 Nd4 19.Bxb7 ",
+   "kp_minus_ks": -1.7153468683759243
+  },
+  {
+   "player": "karpov",
+   "gid": "2741f5a95ce7",
+   "ply": 63,
+   "move": "Qxd6",
+   "context": "8 27.Rg5 Rf7 28.Qd4 Bd7 29.Rd1 Re7 30.Nb3 Be8 31.Qb4 Nc6 32.",
+   "kp_minus_ks": -1.6658368520451177
+  },
+  {
+   "player": "karpov",
+   "gid": "3ed82e0cebc3",
+   "ply": 60,
+   "move": "Nc4",
+   "context": ".Be2 Rd5 26.Qe3 Rc8 27.Rb5 Rd7 28.Bf3 Ne8 29.Rb3 Nd6 30.Be2 ",
+   "kp_minus_ks": -1.663233679894347
+  }
+ ],
+ "gap_by_movetype": {
+  "capture=True": -0.004922549723515086,
+  "capture=False": 0.0036244163555767795,
+  "check=True": -0.020336096918322024,
+  "check=False": 0.003181033485484881
+ }
+}

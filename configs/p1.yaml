@@ -1,0 +1,32 @@
+# P1 locked settings. Edit ONLY before looking at test results.
+seed: 0
+players: [karpov, kasparov]   # order matters: first = 'A', second = 'B'
+base_ckpt: lichess_8layers_ckpt_no_optimizer.pt
+randinit_ckpt: randominit_8layers_ckpt.pt   # Karvonen's untrained baseline (HF)
+probe:
+  layer_resid: 6          # resid index: 0=embed, k=output of block k-1 -> 6 = output of block 5 (6th block)
+  train_min_move: 2       # probe fit on all White-to-move dots
+  eval_min_move: 16       # evaluation from "16." onward
+  epochs: 10
+  batch: 1024
+  fit_splits: [probe_fit, probe_fit_other]   # other = 3000 games of 8 other champions, no Karpov/Kasparov
+  lr: 1.0e-3
+  wd: 0.01
+preservation:
+  tolerance_pp: 1.0       # LOCKED before results: max acceptable occupied-square error increase
+  bootstrap: 2000
+policy:
+  min_ply_scored: 31      # score moves from ply 31 (after 15 moves each)
+finetune:
+  lr: 1e-05
+  warmup_steps: 50
+  schedule_steps: 400   # LR cosine horizon used in sweep s3; final run early-stops at steps
+  steps: 60           # LOCKED by select_config.py (s3_lr1e-5_dp0.0) on dev
+  batch_games: 16
+  wd: 0.1
+  dropout: 0.0
+  grad_clip: 1.0
+  dev_every: 100
+  ckpt_fracs: [0.0, 0.25, 0.5, 1.0]
+sensitivity:
+  swap_fracs: [0.0, 0.05, 0.10, 0.25]
