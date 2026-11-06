@@ -23,7 +23,7 @@ finetune:
   schedule_steps: 6000   # ~1 epoch of ~90k training games at 16 games/step; sweep horizon
   sweep_lrs: [1.0e-6, 3.0e-6, 1.0e-5, 3.0e-5]
   sweep_dev_every: 300
-  steps: 6000            # placeholder; LOCKED by select_config.py on dev
+  steps: 6000           # LOCKED by select_config.py (s3_lr3e-06_dp0.0) on dev
   batch_games: 16
   wd: 0.1
   dropout: 0.0
