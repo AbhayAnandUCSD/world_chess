@@ -32,4 +32,8 @@ sel = rows[0]; lr = float(re.search(r"lr([0-9.e-]+)_dp", sel[1]).group(1)); step
 y = open(CFG).read()
 y = re.sub(r"(finetune:\n  lr: )\S+", rf"\g<1>{lr:.1e}", y)
 y = re.sub(r"(\n  steps: )\d+.*", rf"\g<1>{steps}           # LOCKED by select_config.py ({sel[1]}) on dev", y)
+for key, pat, fmt in (("batch_games", r"_bs(\d+)", "{}"), ("wd", r"_wd([0-9.e-]+)", "{}")):
+    m = re.search(pat, sel[1])
+    if m:  # hyperparameter-sweep runs carry these in their tag; lock them too
+        y = re.sub(rf"(\n  {key}: )\S+", rf"\g<1>{m.group(1)}", y); print("locked", key, m.group(1))
 open(CFG, "w").write(y); print("locked lr", lr, "steps", steps)

@@ -19,18 +19,18 @@ import sys
 import chess
 import torch
 
-from wc.model import CODE_ROOT, encode, load_model, pick_device
+from wc.model import ROOT, encode, load_model, pick_device
 from wc.score import CTX
 
 name, ck = sys.argv[1], sys.argv[2]
 N = int(sys.argv[3]) if len(sys.argv) > 3 else 300
 PLIES = int(sys.argv[4]) if len(sys.argv) > 4 else 30
-OUT = CODE_ROOT / "results/19"; OUT.mkdir(parents=True, exist_ok=True)
+OUT = ROOT / "results/19"; OUT.mkdir(parents=True, exist_ok=True)
 dev = pick_device()
 player = load_model(ck, dev).eval()
 opp = load_model("lichess_8layers_ckpt_no_optimizer.pt", dev).eval()
 
-rows = [json.loads(l) for l in open(CODE_ROOT / "results/18/positions.jsonl")]
+rows = [json.loads(l) for l in open(ROOT / "results/18/positions.jsonl")]
 starts = [r for r in rows if r["set"] == "neutral_otb"][:N] + [r for r in rows if r["set"] == "h2h_p2"][:N]
 
 
@@ -63,7 +63,9 @@ def best_moves(model, texts, boards, max_seqs=int(os.environ.get("MAXSEQ", 768))
 
 
 B = 24  # games advanced together
-with open(OUT / f"rollout_{name}.jsonl", "w") as f:
+destination = OUT / f"rollout_{name}.jsonl"
+temporary = destination.with_suffix(".jsonl.tmp")
+with temporary.open("w") as f:
     for bi in range(0, len(starts), B):
         chunk = starts[bi:bi + B]
         texts = [r["prefix"] for r in chunk]
@@ -90,4 +92,5 @@ with open(OUT / f"rollout_{name}.jsonl", "w") as f:
                                 "end": end[i] or "plies"}) + "\n")
         f.flush()
         print(name, bi + len(chunk), "/", len(starts), flush=True)
+temporary.replace(destination)
 print(name, "done")

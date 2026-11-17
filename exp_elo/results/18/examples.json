@@ -1,0 +1,54 @@
+[
+  {
+    "band": "low",
+    "kind": "gain",
+    "gid": "H76lCuYM",
+    "ply": 52,
+    "figure": "elo_low_gain.svg",
+    "base_move": "Rh8",
+    "copy_move": "Nc5",
+    "base_loss_cp": 972.0,
+    "copy_loss_cp": 0.0,
+    "actual_move": "Nc5",
+    "note": "Selected depth-12 engine example; both training seeds agree."
+  },
+  {
+    "band": "low",
+    "kind": "loss",
+    "gid": "thlmwVZM",
+    "ply": 48,
+    "figure": "elo_low_loss.svg",
+    "base_move": "Qe5",
+    "copy_move": "Ne5",
+    "base_loss_cp": 35.0,
+    "copy_loss_cp": 917.0,
+    "actual_move": "Qf7",
+    "note": "Selected depth-12 engine example; both training seeds agree."
+  },
+  {
+    "band": "high",
+    "kind": "gain",
+    "gid": "0oPDYX6p",
+    "ply": 47,
+    "figure": "elo_high_gain.svg",
+    "base_move": "Bxc6",
+    "copy_move": "f3",
+    "base_loss_cp": 1110.0,
+    "copy_loss_cp": 0.0,
+    "actual_move": "h3",
+    "note": "Selected depth-12 engine example; both training seeds agree."
+  },
+  {
+    "band": "high",
+    "kind": "loss",
+    "gid": "yXhIswnL",
+    "ply": 124,
+    "figure": "elo_high_loss.svg",
+    "base_move": "Qf1+",
+    "copy_move": "Qf2+",
+    "base_loss_cp": 0.0,
+    "copy_loss_cp": 1237.0,
+    "actual_move": "Qf1+",
+    "note": "Selected depth-12 engine example; both training seeds agree."
+  }
+]

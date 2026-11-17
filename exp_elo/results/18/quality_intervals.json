@@ -1,0 +1,622 @@
+{
+  "neutral_otb": {
+    "disagreement_low_ft|high_ft": {
+      "mean": 0.12333333333333334,
+      "ci": [
+        0.1074828342551974,
+        0.13992070730846182
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "disagreement_low_ft|low_s1": {
+      "mean": 0.037333333333333336,
+      "ci": [
+        0.02775941837409121,
+        0.04680470294990111
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "disagreement_high_ft|high_s1": {
+      "mean": 0.03266666666666666,
+      "ci": [
+        0.024456476838414898,
+        0.04174701310441781
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "disagreement_low_ft|base": {
+      "mean": 0.088,
+      "ci": [
+        0.07482912976511359,
+        0.10261569416498995
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "disagreement_high_ft|base": {
+      "mean": 0.13,
+      "ci": [
+        0.11325750823954009,
+        0.14743215763145046
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/top_loss_cp": {
+      "mean": 0.25333333333333335,
+      "ci": [
+        -3.093270606316123,
+        3.512379114536702
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/expected_loss_cp": {
+      "mean": -2.025438605838167,
+      "ci": [
+        -2.87551544793401,
+        -1.1921462297694814
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/blunder_probability": {
+      "mean": -0.0029957779375360304,
+      "ci": [
+        -0.0044466285152673785,
+        -0.001480845711640683
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/best_probability": {
+      "mean": 0.0047418033648288175,
+      "ci": [
+        0.002921985092402935,
+        0.00660915547585673
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/only_move_for_opponent": {
+      "mean": 0.0008158918837837984,
+      "ci": [
+        -0.0008972007209855576,
+        0.002516693927690326
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "low_ft-base/sole_best": {
+      "mean": 0.002631578947368421,
+      "ci": [
+        -0.02061988864913823,
+        0.02368421052631579
+      ],
+      "n_positions": 380,
+      "n_games": 354
+    },
+    "high_ft-base/top_loss_cp": {
+      "mean": -2.1806666666666668,
+      "ci": [
+        -5.739716213105813,
+        1.351995483586691
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "high_ft-base/expected_loss_cp": {
+      "mean": -4.914511036692042,
+      "ci": [
+        -5.87560572269709,
+        -3.9913226380648585
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "high_ft-base/blunder_probability": {
+      "mean": -0.009286433808317281,
+      "ci": [
+        -0.01104312533716015,
+        -0.007626769886117386
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "high_ft-base/best_probability": {
+      "mean": 0.00794525936892044,
+      "ci": [
+        0.005392521296918365,
+        0.010418477380382858
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "high_ft-base/only_move_for_opponent": {
+      "mean": -0.005742862873613304,
+      "ci": [
+        -0.0076066690234336725,
+        -0.0038565049973049528
+      ],
+      "n_positions": 1500,
+      "n_games": 1125
+    },
+    "high_ft-base/sole_best": {
+      "mean": 0.018421052631578946,
+      "ci": [
+        -0.005235945637685342,
+        0.03937007874015748
+      ],
+      "n_positions": 380,
+      "n_games": 354
+    }
+  },
+  "h2h_p2": {
+    "disagreement_low_ft|high_ft": {
+      "mean": 0.115,
+      "ci": [
+        0.09552717857580587,
+        0.13690779883381923
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "disagreement_low_ft|low_s1": {
+      "mean": 0.026,
+      "ci": [
+        0.016275877738818802,
+        0.036292155425219935
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "disagreement_high_ft|high_s1": {
+      "mean": 0.027,
+      "ci": [
+        0.017646195464487164,
+        0.0370779489621123
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "disagreement_low_ft|base": {
+      "mean": 0.098,
+      "ci": [
+        0.0799990366088632,
+        0.1165653265113121
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "disagreement_high_ft|base": {
+      "mean": 0.119,
+      "ci": [
+        0.09941963780875915,
+        0.13751474553420961
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/top_loss_cp": {
+      "mean": -2.574,
+      "ci": [
+        -7.419564834390416,
+        2.608831461701773
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/expected_loss_cp": {
+      "mean": -2.208096046083477,
+      "ci": [
+        -3.3011213678486717,
+        -1.176195801083745
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/blunder_probability": {
+      "mean": -0.004349262455081345,
+      "ci": [
+        -0.006665267976271463,
+        -0.002218520338531979
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/best_probability": {
+      "mean": 0.004828778574318596,
+      "ci": [
+        0.002306911733847322,
+        0.007330833833731287
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/only_move_for_opponent": {
+      "mean": 0.001024016450538627,
+      "ci": [
+        -0.0009009175732523408,
+        0.0031657587148591704
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "low_ft-base/sole_best": {
+      "mean": 0.0,
+      "ci": [
+        -0.0243161094224924,
+        0.023880597014925373
+      ],
+      "n_positions": 326,
+      "n_games": 267
+    },
+    "high_ft-base/top_loss_cp": {
+      "mean": -2.997,
+      "ci": [
+        -9.503315252153751,
+        3.6550468443870097
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "high_ft-base/expected_loss_cp": {
+      "mean": -5.722959816939995,
+      "ci": [
+        -7.236480413984585,
+        -4.318550171800139
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "high_ft-base/blunder_probability": {
+      "mean": -0.011275565820014027,
+      "ci": [
+        -0.014016479332177105,
+        -0.008567439344266034
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "high_ft-base/best_probability": {
+      "mean": 0.007646245776354457,
+      "ci": [
+        0.004547965047823456,
+        0.010965598460215505
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "high_ft-base/only_move_for_opponent": {
+      "mean": -0.005307656129384744,
+      "ci": [
+        -0.007914962966829933,
+        -0.0025679234600611968
+      ],
+      "n_positions": 1000,
+      "n_games": 586
+    },
+    "high_ft-base/sole_best": {
+      "mean": 0.0,
+      "ci": [
+        -0.025396825396825397,
+        0.024541764983482765
+      ],
+      "n_positions": 326,
+      "n_games": 267
+    }
+  },
+  "own_low": {
+    "disagreement_low_ft|high_ft": {
+      "mean": 0.13,
+      "ci": [
+        0.11129568106312292,
+        0.148706476936142
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "disagreement_low_ft|low_s1": {
+      "mean": 0.025833333333333333,
+      "ci": [
+        0.016877281362734003,
+        0.0352371218834845
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "disagreement_high_ft|high_s1": {
+      "mean": 0.03833333333333333,
+      "ci": [
+        0.02761390925011273,
+        0.04975330986264689
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "disagreement_low_ft|base": {
+      "mean": 0.08666666666666667,
+      "ci": [
+        0.07083166596461668,
+        0.10235276845637582
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "disagreement_high_ft|base": {
+      "mean": 0.1325,
+      "ci": [
+        0.11305034649350222,
+        0.15151705497182882
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/top_loss_cp": {
+      "mean": 1.3816666666666666,
+      "ci": [
+        -2.3924631431519976,
+        5.0734722049044
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/expected_loss_cp": {
+      "mean": -3.2150094788729207,
+      "ci": [
+        -4.115114884246378,
+        -2.296859844679613
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/blunder_probability": {
+      "mean": -0.0054467195099209805,
+      "ci": [
+        -0.007013289292296322,
+        -0.00388842612492297
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/best_probability": {
+      "mean": 0.005987974192462459,
+      "ci": [
+        0.0037902947916002524,
+        0.008098798636178498
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/only_move_for_opponent": {
+      "mean": -0.0020892244948432664,
+      "ci": [
+        -0.0037589203785470845,
+        -0.00032602144657014345
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "low_ft-base/sole_best": {
+      "mean": -0.008695652173913044,
+      "ci": [
+        -0.028985507246376812,
+        0.011461318051575931
+      ],
+      "n_positions": 345,
+      "n_games": 341
+    },
+    "high_ft-base/top_loss_cp": {
+      "mean": -1.7775,
+      "ci": [
+        -6.377711260330579,
+        2.6332832146448144
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "high_ft-base/expected_loss_cp": {
+      "mean": -6.621496149965,
+      "ci": [
+        -7.826122871150683,
+        -5.44687917875857
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "high_ft-base/blunder_probability": {
+      "mean": -0.01095448088455513,
+      "ci": [
+        -0.013223638104716755,
+        -0.008640586488596346
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "high_ft-base/best_probability": {
+      "mean": 0.01180052945550067,
+      "ci": [
+        0.008589295728167499,
+        0.0150703761211565
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "high_ft-base/only_move_for_opponent": {
+      "mean": -0.007511725910913469,
+      "ci": [
+        -0.00981332360050591,
+        -0.005211176980411894
+      ],
+      "n_positions": 1200,
+      "n_games": 1144
+    },
+    "high_ft-base/sole_best": {
+      "mean": -0.008695652173913044,
+      "ci": [
+        -0.03735901321673458,
+        0.02023121387283237
+      ],
+      "n_positions": 345,
+      "n_games": 341
+    }
+  },
+  "own_high": {
+    "disagreement_low_ft|high_ft": {
+      "mean": 0.12416666666666666,
+      "ci": [
+        0.1060480530240265,
+        0.1432149558498896
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "disagreement_low_ft|low_s1": {
+      "mean": 0.029166666666666667,
+      "ci": [
+        0.019949710441504214,
+        0.03986876800017688
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "disagreement_high_ft|high_s1": {
+      "mean": 0.03,
+      "ci": [
+        0.020729684908789386,
+        0.04000083402835696
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "disagreement_low_ft|base": {
+      "mean": 0.09916666666666667,
+      "ci": [
+        0.08312002884705832,
+        0.11676396997497915
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "disagreement_high_ft|base": {
+      "mean": 0.11833333333333333,
+      "ci": [
+        0.1004983109527571,
+        0.13632585203657524
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/top_loss_cp": {
+      "mean": 0.595,
+      "ci": [
+        -4.1401175546811135,
+        5.412661597647028
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/expected_loss_cp": {
+      "mean": -1.7815936129662608,
+      "ci": [
+        -2.6731258078033604,
+        -0.8908300892918484
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/blunder_probability": {
+      "mean": -0.0037541564459544273,
+      "ci": [
+        -0.005378459657888497,
+        -0.002113736952499454
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/best_probability": {
+      "mean": 0.003022606696356085,
+      "ci": [
+        0.0009209977045464628,
+        0.005207083436388255
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/only_move_for_opponent": {
+      "mean": -0.00013976093671716304,
+      "ci": [
+        -0.00188410387004603,
+        0.0016659204657795232
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "low_ft-base/sole_best": {
+      "mean": 0.0,
+      "ci": [
+        -0.024615384615384615,
+        0.024691358024691357
+      ],
+      "n_positions": 325,
+      "n_games": 320
+    },
+    "high_ft-base/top_loss_cp": {
+      "mean": -5.975833333333333,
+      "ci": [
+        -11.227237402137495,
+        -1.0915988818343572
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "high_ft-base/expected_loss_cp": {
+      "mean": -4.413347082039553,
+      "ci": [
+        -5.575064968109856,
+        -3.2126304726755124
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "high_ft-base/blunder_probability": {
+      "mean": -0.008494761966613031,
+      "ci": [
+        -0.010716784039312857,
+        -0.006269645430042612
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "high_ft-base/best_probability": {
+      "mean": 0.007098827986835466,
+      "ci": [
+        0.0038524289638179367,
+        0.010150976571193873
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "high_ft-base/only_move_for_opponent": {
+      "mean": -0.007473953358306171,
+      "ci": [
+        -0.009959408005802684,
+        -0.004927174415186417
+      ],
+      "n_positions": 1200,
+      "n_games": 1135
+    },
+    "high_ft-base/sole_best": {
+      "mean": 0.0,
+      "ci": [
+        -0.027522935779816515,
+        0.024691358024691357
+      ],
+      "n_positions": 325,
+      "n_games": 320
+    }
+  }
+}

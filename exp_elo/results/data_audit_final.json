@@ -1,0 +1,22 @@
+{
+  "low": {
+    "splits": {
+      "policy": 70000,
+      "test": 14992,
+      "probe_dev": 5007,
+      "probe_fit": 10000,
+      "test_leak": 1
+    },
+    "test_policy_target_account_overlap": 0
+  },
+  "high": {
+    "splits": {
+      "test": 14913,
+      "probe_fit": 9855,
+      "policy": 70148,
+      "probe_dev": 5067,
+      "test_leak": 17
+    },
+    "test_policy_target_account_overlap": 0
+  }
+}

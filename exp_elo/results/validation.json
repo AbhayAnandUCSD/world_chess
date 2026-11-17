@@ -1,0 +1,18 @@
+{
+  "shared_positions_exact": true,
+  "base_policy_max_abs_logprob_difference": 0.0,
+  "engine_positions": 4900,
+  "rollouts_per_model": {
+    "base": 600,
+    "low_ft": 600,
+    "high_ft": 600,
+    "low_s1": 600,
+    "high_s1": 600
+  },
+  "historical_base_sequences_reproduced": 594,
+  "historical_base_sequences_total": 600,
+  "results/09/xdom_low.json": 12,
+  "results/09/xdom_high.json": 12,
+  "exp_p2/results/09/xdom_low.json": 12,
+  "exp_p2/results/09/xdom_high.json": 12
+}

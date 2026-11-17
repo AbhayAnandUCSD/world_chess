@@ -1,0 +1,338 @@
+{
+ "low": {
+  "games": 100000,
+  "white_share": 0.49943,
+  "median_plies": 69.0,
+  "eco_family": {
+   "A": 0.2956,
+   "B": 0.30915,
+   "C": 0.23488,
+   "D": 0.13498,
+   "E": 0.02539
+  },
+  "top_eco_white": [
+   [
+    "A00",
+    3473
+   ],
+   [
+    "A40",
+    2809
+   ],
+   [
+    "B01",
+    2448
+   ],
+   [
+    "C00",
+    2430
+   ],
+   [
+    "B00",
+    1721
+   ],
+   [
+    "D00",
+    1676
+   ]
+  ],
+  "top_eco_black": [
+   [
+    "A00",
+    3481
+   ],
+   [
+    "A40",
+    2826
+   ],
+   [
+    "B01",
+    2495
+   ],
+   [
+    "C00",
+    2426
+   ],
+   [
+    "B00",
+    1708
+   ],
+   [
+    "D00",
+    1631
+   ]
+  ],
+  "first_move_white": {
+   "e4": 26875,
+   "d4": 13713,
+   "Nf3": 2009,
+   "c4": 1872
+  },
+  "capture_rate": 0.2352499770415318,
+  "check_rate": 0.0667885970459277,
+  "late_capture_rate": 0.26257195268517936,
+  "late_check_rate": 0.09793436931143301,
+  "late_piece_mix": {
+   "B": 0.11658619211279088,
+   "K": 0.17342114079415616,
+   "N": 0.12817968199080224,
+   "O": 0.004090028417942897,
+   "P": 0.20687840728323997,
+   "Q": 0.1500383044819758,
+   "R": 0.22080624491909204
+  }
+ },
+ "high": {
+  "games": 100000,
+  "white_share": 0.50094,
+  "median_plies": 82.0,
+  "eco_family": {
+   "A": 0.37333,
+   "B": 0.28067,
+   "C": 0.13719,
+   "D": 0.1314,
+   "E": 0.07741
+  },
+  "top_eco_white": [
+   [
+    "A00",
+    2752
+   ],
+   [
+    "A04",
+    2024
+   ],
+   [
+    "A40",
+    1739
+   ],
+   [
+    "A45",
+    1643
+   ],
+   [
+    "A01",
+    1563
+   ],
+   [
+    "B06",
+    1218
+   ]
+  ],
+  "top_eco_black": [
+   [
+    "A00",
+    2733
+   ],
+   [
+    "A04",
+    1978
+   ],
+   [
+    "A40",
+    1681
+   ],
+   [
+    "A45",
+    1667
+   ],
+   [
+    "A01",
+    1426
+   ],
+   [
+    "B06",
+    1364
+   ]
+  ],
+  "first_move_white": {
+   "e4": 19783,
+   "d4": 16643,
+   "Nf3": 5523,
+   "c4": 2883
+  },
+  "capture_rate": 0.2168255669518691,
+  "check_rate": 0.06236247660137184,
+  "late_capture_rate": 0.24043731056532638,
+  "late_check_rate": 0.08809975220995823,
+  "late_piece_mix": {
+   "B": 0.12559069278191765,
+   "K": 0.18357970760413597,
+   "N": 0.12498414035290652,
+   "O": 0.002724425302417715,
+   "P": 0.20420610492489485,
+   "Q": 0.13339635020269622,
+   "R": 0.22551857883103105
+  }
+ },
+ "disagree_top_lowish": [
+  {
+   "player": "high",
+   "gid": "RiyrOAqN",
+   "ply": 59,
+   "move": "Rfa1",
+   "context": "5.Qxb3 Nd7 26.Bf4 Ne5 27.Bxe5 Rxe5 28.Ra1 Re8 29.Ra7 Qb6 30.",
+   "kp_minus_ks": 5.665393058210604
+  },
+  {
+   "player": "high",
+   "gid": "8wLPxBEU",
+   "ply": 109,
+   "move": "Nxf8",
+   "context": "50.Rd5 Ra8 51.Rd7 Rb8 52.Kg2 Ra8 53.Ne6 Rf8 54.Rxg7+ Kh8 55.",
+   "kp_minus_ks": 3.8758487558534327
+  },
+  {
+   "player": "low",
+   "gid": "uKuJCTRk",
+   "ply": 78,
+   "move": "Kh6",
+   "context": "Re1 Qd4 35.Re3 Qc3 36.Qxc3 Rf7 37.Rxe4 Rd7 38.Qd2 a6 39.Re3 ",
+   "kp_minus_ks": 3.556129522694391
+  },
+  {
+   "player": "low",
+   "gid": "WUl3Ppof",
+   "ply": 31,
+   "move": "Qa4",
+   "context": "xf6+ Bxf6 12.c3 O-O 13.cxd4 Bxd4 14.Nxd4 Nxd4 15.Be3 Bc6 16.",
+   "kp_minus_ks": 3.3246569626971905
+  },
+  {
+   "player": "high",
+   "gid": "jhxaaMcU",
+   "ply": 56,
+   "move": "Qxb2+",
+   "context": "3.Qb3 Qc7 24.Qc3 Rc6 25.Qd3 Qa5 26.a3 Rcb6 27.Qc3 Qb5 28.f4 ",
+   "kp_minus_ks": 3.254399403377626
+  },
+  {
+   "player": "high",
+   "gid": "4NygRTOq",
+   "ply": 78,
+   "move": "Rxd3+",
+   "context": "Rca7 35.Kd2 Ra1 36.Rhe3 Rg1 37.Re2 Raa1 38.Nf3 Rgd1+ 39.Ke3 ",
+   "kp_minus_ks": 3.252936697601399
+  },
+  {
+   "player": "high",
+   "gid": "DPDRuywz",
+   "ply": 77,
+   "move": "Rg1+",
+   "context": "xe7 35.Bxc6+ Qxc6 36.Qxc6+ Kf7 37.Qxe4 Rxd2 38.Qxe7+ Kg8 39.",
+   "kp_minus_ks": 3.097929715819191
+  },
+  {
+   "player": "low",
+   "gid": "YtJ2ucXu",
+   "ply": 63,
+   "move": "Be6+",
+   "context": " cxd4 28.Rxe7 dxc3 29.Rxd7+ Kc8 30.Rc7+ Kb8 31.Rxb7+ Kc8 32.",
+   "kp_minus_ks": 3.0260471999629033
+  },
+  {
+   "player": "low",
+   "gid": "Yx7VagvS",
+   "ply": 46,
+   "move": "Qh6",
+   "context": " Nxd7 19.d4 Kf8 20.dxe5 Nxe5 21.Qd8+ Kg7 22.f6+ Kg6 23.Qxh8 ",
+   "kp_minus_ks": 3.0213011503219818
+  },
+  {
+   "player": "low",
+   "gid": "hwrQa2Ah",
+   "ply": 33,
+   "move": "Bd4",
+   "context": "12.cxd5 Nxd5 13.Nxd5 Qxd5 14.Bc4 Qd7 15.O-O b5 16.Bb3 a5 17.",
+   "kp_minus_ks": 2.9363933801650433
+  }
+ ],
+ "disagree_top_highish": [
+  {
+   "player": "high",
+   "gid": "zFODtRUa",
+   "ply": 47,
+   "move": "Qd4+",
+   "context": ".O-O Qf6 20.Ra5 Rfe8 21.Rfa1 Re5 22.Qc4 Rxa5 23.Rxa5 Qf7 24.",
+   "kp_minus_ks": -6.821538768243045
+  },
+  {
+   "player": "high",
+   "gid": "zFODtRUa",
+   "ply": 51,
+   "move": "Qd4+",
+   "context": ".Rfa1 Re5 22.Qc4 Rxa5 23.Rxa5 Qf7 24.Qd4+ Qf6 25.Qc4 Qf7 26.",
+   "kp_minus_ks": -4.188804675359279
+  },
+  {
+   "player": "low",
+   "gid": "emiTEov3",
+   "ply": 74,
+   "move": "Rc2",
+   "context": " Qxg5 33.Nf3 Qg2+ 34.Ke1 Qh1+ 35.Ke2 Qxh3 36.Qg1 Qh5 37.Qg3 ",
+   "kp_minus_ks": -4.186110317707062
+  },
+  {
+   "player": "high",
+   "gid": "eBjn7M6U",
+   "ply": 87,
+   "move": "Rf1",
+   "context": " Qf4 39.Bb7 Be5 40.Bd5 Ra4 41.b6 Rb4 42.b7 Kh7 43.h3 Rb2 44.",
+   "kp_minus_ks": -3.9749471680115676
+  },
+  {
+   "player": "high",
+   "gid": "sjTRtOKP",
+   "ply": 69,
+   "move": "Rxd5",
+   "context": ".Be2 Qa2 31.Rd1 Bb4 32.Rcc1 Bxd2 33.Ra1 Bxe3+ 34.Kf1 Qc2 35.",
+   "kp_minus_ks": -3.7357063309864316
+  },
+  {
+   "player": "low",
+   "gid": "QUP1XXva",
+   "ply": 51,
+   "move": "Bxc5",
+   "context": "1.Kg1 Qh2+ 22.Kf1 Qh1+ 23.Bg1 Rfe8 24.Qg2 Qh4 25.Rd1 Re5 26.",
+   "kp_minus_ks": -3.633982692997982
+  },
+  {
+   "player": "high",
+   "gid": "ih9vYEBE",
+   "ply": 38,
+   "move": "Bxh5",
+   "context": "2 O-O-O 15.Bxh6 Nb6 16.Bb3 Rdg8 17.g3 Be4 18.Rh4 Bf3 19.Bf4 ",
+   "kp_minus_ks": -2.757466516690336
+  },
+  {
+   "player": "low",
+   "gid": "cGxevfRz",
+   "ply": 51,
+   "move": "Nh4",
+   "context": "cxd5 Rac8 22.Bc3 Bf6 23.Bxf6 gxf6 24.Nd2 Rc2 25.Kd3 Rxb2 26.",
+   "kp_minus_ks": -2.681885838508606
+  },
+  {
+   "player": "low",
+   "gid": "u9soaeyw",
+   "ply": 66,
+   "move": "gxf5+",
+   "context": "fxg4 29.Qxe4 Qxe4 30.Bxe4 h5 31.Kg5 Raf8 32.h3 Rf5+ 33.Bxf5 ",
+   "kp_minus_ks": -2.6373380426239237
+  },
+  {
+   "player": "high",
+   "gid": "nvI2WZBj",
+   "ply": 90,
+   "move": "Rxd4",
+   "context": "xb4 41.Nb3 Kd6 42.Nd4 Rg5 43.axb4 Rxb4 44.Rxe5 Rxe5 45.Rxe5 ",
+   "kp_minus_ks": -2.6157928865453073
+  }
+ ],
+ "gap_by_movetype": {
+  "capture=True": 0.03745140189863952,
+  "capture=False": -0.015254785479237924,
+  "check=True": 0.03734502367145174,
+  "check=False": -0.005362962973350423
+ }
+}
