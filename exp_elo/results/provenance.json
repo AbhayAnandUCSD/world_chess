@@ -1,0 +1,22 @@
+{
+  "python": "3.12.11",
+  "torch": "2.15.0+cu132",
+  "cuda": "13.2",
+  "checkpoint_step": 6000,
+  "policy_rows": 4900,
+  "rollout_starts": 600,
+  "rollout_max_plies": 30,
+  "rollout_maxseq": 256,
+  "engine_depth": 12,
+  "reply_depth": 8,
+  "example_verification_depth": 18,
+  "sha256": {
+    "exp_elo/configs/elo.yaml": "856140086c3cb1b7e08795a730b249cb243b36553e4575161b94aa5d5b2809fc",
+    "exp_elo/data/games.jsonl": "fb27285d6f9e74efeaa283db14bfb0179a27ef9bb0898a877b1c387fe6484dbd",
+    "exp_elo/ckpts/probe_base_frozen.pt": "9fd79f130ef44014739021c8f6741521e83ef7558c503b683d67b1181d49ab98",
+    "exp_elo/ckpts/ft_low/step6000.pt": "971a2736ab3db4ea73ff37d94fc660fd1111cec4a8be41fc938ae999fb07344b",
+    "exp_elo/ckpts/ft_high/step6000.pt": "cad267b456ac282bcb25db36a3c28960f87594f81ed141a7d7cffd3322de5ec2",
+    "exp_elo/ckpts/ft_low_p15_s1/step6000.pt": "f9ce875d6376cf52d69621d69dc380f67d46ebb9150eb9e08954473a09bbbedf",
+    "exp_elo/ckpts/ft_high_p15_s1/step6000.pt": "730dcacdf43356db2d2a126ff4d6ffd2f971c199b894d036406763eb75d49167"
+  }
+}

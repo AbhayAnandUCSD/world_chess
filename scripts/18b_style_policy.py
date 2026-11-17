@@ -12,10 +12,10 @@ import sys
 import numpy as np
 import torch
 
-from wc.model import CODE_ROOT, encode, load_model, pick_device
+from wc.model import ROOT, encode, load_model, pick_device
 
 name, ck = sys.argv[1], sys.argv[2]
-OUT = CODE_ROOT / "results/18"
+OUT = ROOT / "results/18"
 dev = pick_device()
 m = load_model(ck, dev).eval()
 rows = [json.loads(l) for l in open(OUT / "positions.jsonl")]
@@ -37,5 +37,9 @@ with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16, enabled=dev =
         res.append((sc - sc.logsumexp(0)).cpu().numpy())
         if k % 1000 == 0:
             print(name, k, flush=True)
-np.save(OUT / f"policy_{name}.npy", np.concatenate(res).astype(np.float32))
+destination = OUT / f"policy_{name}.npy"
+temporary = destination.with_suffix(".npy.tmp")
+with temporary.open("wb") as handle:
+    np.save(handle, np.concatenate(res).astype(np.float32))
+temporary.replace(destination)
 print(name, "done")

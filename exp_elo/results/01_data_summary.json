@@ -10,13 +10,15 @@
   "low_drop_short": 2168,
   "low_drop_clock_anomaly": 3965,
   "low_kept": 100000,
+  "low_accounts": 29161,
+  "high_accounts": 3164,
   "other_pool": 3000
  },
  "low": {
   "games": 100000,
   "policy_games": 70000,
-  "target_moves": 2352112,
-  "skipped_frac": 0.05990614696980057,
+  "target_moves": 2355397,
+  "skipped_frac": 0.06001107044498477,
   "tc": [
    [
     "180+0",
@@ -102,9 +104,9 @@
  },
  "high": {
   "games": 100000,
-  "policy_games": 70000,
-  "target_moves": 2719858,
-  "skipped_frac": 0.07838600700056586,
+  "policy_games": 70148,
+  "target_moves": 2722922,
+  "skipped_frac": 0.07705005494471973,
   "tc": [
    [
     "180+0",

@@ -13,12 +13,15 @@ import sys
 import chess
 import chess.engine
 
-from wc.model import CODE_ROOT
+from wc.model import ROOT
 
 shard, nshard, sf = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
 D, D2, CLIP = 12, 8, 1000
-OUT = CODE_ROOT / "results/18"
+OUT = ROOT / "results/18"
 rows = [json.loads(l) for l in open(OUT / "positions.jsonl")][shard::nshard]
+cached_path = OUT / "engine_cached.jsonl"
+cached = {r["i"] for r in map(json.loads, cached_path.open())} if cached_path.exists() else set()
+rows = [r for r in rows if r["i"] not in cached]
 eng = chess.engine.SimpleEngine.popen_uci(sf)
 eng.configure({"Threads": 1, "Hash": 32})
 
@@ -27,7 +30,9 @@ def cp(score, pov):
     return max(-CLIP, min(CLIP, score.pov(pov).score(mate_score=10 * CLIP)))
 
 
-with open(OUT / f"engine_{shard}.jsonl", "w") as f:
+destination = OUT / f"engine_{shard}.jsonl"
+temporary = destination.with_suffix(".jsonl.tmp")
+with temporary.open("w") as f:
     for r in rows:
         b = chess.Board(r["fen"]); me = b.turn
         infos = eng.analyse(b, chess.engine.Limit(depth=D), multipv=len(r["legal"]))
@@ -44,3 +49,4 @@ with open(OUT / f"engine_{shard}.jsonl", "w") as f:
             gaps.append(opp[0] - opp[1] if len(opp) > 1 else CLIP)
         f.write(json.dumps({"i": r["i"], "eval": evals, "opp_gap": gaps}) + "\n"); f.flush()
 eng.quit()
+temporary.replace(destination)

@@ -1,5 +1,7 @@
 # Data audit: Elo-band Lichess dataset (exp_elo/data/games.jsonl)
 
+Update after rebuilding the splits: the [final audit](../exp_elo/results/data_audit_final.json) finds zero training/test target-account overlap in both bands. This document preserves the earlier audit that motivated account-grouped splitting. The final test excludes records marked test_leak. The inherited extra probe-fit pool is mixed-source, so it should not be described as exclusively over-the-board.
+
 Scope: read-only audit of 203,000 records (100,000 low, 100,000 high, 3,000 other). Full-file pass for metadata, splits, TC, colour, leakage, clock filter (all 200k games). Text integrity and SAN replay on 2,500 random games per band. No data or code was modified.
 
 ## Verdict

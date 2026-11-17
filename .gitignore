@@ -20,3 +20,11 @@ results/19/rollout_*.jsonl
 *.csv
 colab/
 .claude/worktrees/
+
+# Derived Elo evaluation arrays and runtime records
+exp_*/results/18/*.npy
+exp_*/results/18/engine_*.jsonl
+exp_*/results/18/per_position.json
+exp_*/results/19/rollout_*.jsonl
+exp_*/results/**/*.tmp
+results/**/*.tmp

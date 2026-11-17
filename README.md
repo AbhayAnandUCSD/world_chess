@@ -6,6 +6,10 @@ I fine-tuned four copies of the same chess transformer on games by Anatoly Karpo
 
 [Download the standalone HTML report](https://github.com/AbhayAnandUCSD/world_chess/raw/refs/heads/main/output/chess-probe-report.html) to read the full analysis and annotated positions offline.
 
+The follow-up now also compares models trained on **1500–1999 Elo and 2300+ Elo games**. They choose different moves on **12.3%** of the same neutral boards, compared with **3.3–3.7%** across seeds of one band. After ten own moves, only **28.3%** of their games remain identical. Their frozen-probe error changes are **+0.107 and −0.125 percentage points** on the Elo test set.
+
+Read the [Elo study](exp_elo/REPORT.md), the [combined experiment writeup](WRITEUP.md), or [download the full report including Elo](https://github.com/AbhayAnandUCSD/world_chess/raw/refs/heads/main/report.html).
+
 ## Five checkpoints on the same boards
 
 The base was [Adam Karvonen’s 25M-parameter chess transformer](https://huggingface.co/adamkarvonen/chess_llms), pretrained on about 16 million Lichess games. I trained each copy on its own player’s moves. Karpov and Kasparov played in person. Carlsen and Tang’s games were online bullet, with one minute per player. I matched the amount of training text within each pair and chose checkpoints on validation games.
@@ -56,7 +60,7 @@ I fitted a rotation from each specialist’s coordinates back to the base model�
 
 Two controls help interpret the result. On the in-person validation games, a probe trained on an untrained transformer misread 85% of occupied squares, compared with 12% on the pretrained model. And when I replaced the activations for 5% of positions with activations from another game at the same move number, error rose by 3.5 points in each pair. The test could detect a broken correspondence between an activation and its board.
 
-I also tested whether the board information influenced a move. Making a movable piece’s square look empty inside the model reduced the probability of moving that piece by 9.5–18.5% across specialists at the medium edit strength. Random edits of the same size changed it by less than 1%. These results cover four grandmaster policies trained from a common base. A wider range of playing strengths would test whether the same probe survives larger changes in behaviour.
+I also tested whether the board information influenced a move. Making a movable piece’s square look empty inside the model reduced the probability of moving that piece by 9.5–18.5% across specialists at the medium edit strength. Random edits of the same size changed it by less than 1%. The Elo follow-up also preserves board readability. Its policy separation is measurable, although the eight-habit correlation does not reproduce the grandmaster result. The new chapter reports both findings and the matched-domain comparisons.
 
 ## Explore the experiment
 
@@ -76,3 +80,11 @@ uv run python scripts/14_joint_figures.py
 ```
 
 This figure uses [the saved analysis of all four specialists](results/13_joint.json), so it can be rebuilt without downloading games or training a model. The [experiment notes](WRITEUP.md) cover the data splits, checkpoint selection, training runs, and follow-up experiments.
+
+## Reproduce the Elo follow-up
+
+The selected training settings and rating bands are in [the Elo configuration](exp_elo/configs/elo.yaml). [The final data audit](exp_elo/results/data_audit_final.json) verifies that training and test target-player accounts are disjoint. The earlier audit in notes documents the issues that prompted rebuilding the splits.
+
+The shared GPU scripts now respect WC_ROOT, so the same scoring and rollout code runs for each experiment. [The Elo scripts](scripts/elo) prepare the original neutral boards, sample held-out Elo boards, compute paired game-bootstrap intervals, compare rollouts, verify selected chess examples at depth 18, and build the report.
+
+Saved evidence includes [policy comparisons](exp_elo/results/18/style.json), [quality intervals](exp_elo/results/18/quality_intervals.json), [identification](exp_elo/results/17_identify.json), [rollouts](exp_elo/results/19/rollouts.json), and [matched-KL results on common domains](exp_elo/results/16_matched_kl_all_six.json). Raw game files, checkpoint weights and runtime logs remain local to the experiment machines.
